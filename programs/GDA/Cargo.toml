@@ -1,0 +1,23 @@
+[package]
+name = "GDA"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "gda"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "~0.24.2"
+anchor-spl = "~0.24.2"
+mpl-auction-house = { version = "1.2.4", features = ["cpi", "no-entrypoint"]}
+mpl-token-metadata = { version="1.2.10", features = [ "no-entrypoint" ] }
+spl-token = { version = "~3.2",  features = ["no-entrypoint"] }
